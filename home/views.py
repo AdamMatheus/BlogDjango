@@ -1,6 +1,5 @@
-from tkinter import E
 from django.shortcuts import render,redirect
-from django.urls import reverse_lazy,reverse
+from django.urls import reverse_lazy
 from home.forms import BlogForm
 from .models import BlogModel,Like, Comment
 from .forms import *
