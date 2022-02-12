@@ -74,6 +74,7 @@ def see_blog(request):
         context['blog_objs']= blog_objs
     except Exception as e:
         print(e)
+    print(context)
     return render(request,'see_blog.html',context)
 
 def add_blog(request):
