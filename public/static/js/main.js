@@ -13,17 +13,17 @@ function login(){
 
     var data={
         'username':username,
-        'password':password
+        'password':password,
     }
 
-    fetch('/api/login',{
+    fetch('/api/login/',{
         method:'POST',
         headers:{
             'Content-Type': 'application/json',
             'X-CSRFToken' : csrf,
         },
         
-        'body': JSON.stringify(data)
+        body: JSON.stringify(data)
     }).then(result=>result.json())
     .then(response=> {
         

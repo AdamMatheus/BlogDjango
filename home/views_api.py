@@ -1,4 +1,3 @@
-from tabnanny import check
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
@@ -19,7 +18,7 @@ class LoginView(APIView):
             data=request.data
             
             if data.get('username') is None:
-                response['message']='Something went wrong!'
+                response['message']='Key username not found!'
                 raise Exception('key username not found')
             
             if data.get('password') is None:
@@ -69,7 +68,7 @@ class RegisterView(APIView):
             data=request.data
             
             if data.get('username') is None:
-                response['message']='Something went wrong!'
+                response['message']='Key username not found!'
                 raise Exception('key username not found')
             
             if data.get('password') is None:
@@ -87,7 +86,7 @@ class RegisterView(APIView):
             user_obj.save()
             token=generate_random_string(20)
             Profile.objects.create(user=user_obj,token=token)
-            send_mail_to_user(token,data.get('username'))
+            # send_mail_to_user(token,data.get('username'))
             
             
             response['message']='User created'
