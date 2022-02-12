@@ -37,7 +37,7 @@ def like_post(request):
             else:
                 like.value='Like'
         
-        like.save()
+        like.save()  
         
             
     return redirect('post-list')

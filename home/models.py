@@ -23,9 +23,7 @@ class BlogModel(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     upload_to=models.DateTimeField(auto_now=True)
     liked= models.ManyToManyField(User, default=None, blank=True ,related_name='liked')
-   
-    
-    
+
     def __str__(self):
         return str(self.title)
     
@@ -46,6 +44,9 @@ class Like(models.Model):
     user=models.ForeignKey(User,blank=True, null=True, on_delete=models.CASCADE)
     post=models.ForeignKey(BlogModel, on_delete=models.CASCADE)
     value=models.CharField(choices=LIKE_CHOICES, default='Like' ,max_length=10)
+    
+    def __str__(self):
+        return str(self.post)
  
 
 
