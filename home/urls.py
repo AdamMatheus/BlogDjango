@@ -16,7 +16,7 @@ urlpatterns = [
     path('logout-view/' ,logout_view , name='logout_view' ),
     path('verify/<token>/', verify , name ='verify'),
     path('' , post_view, name='post-list'),
-    path('like/' , like_post, name='like-post'),
+    path('like/<int:pk>' , like_post, name='like_post'),
     path('blog/<int:pk>/comment/', AddCommentView.as_view(),name='add_comment' )
 ]
 

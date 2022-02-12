@@ -27,7 +27,7 @@ class BlogModel(models.Model):
     
     
     def __str__(self):
-        return self.title
+        return str(self.title)
     
     def save(self,*args,**kwargs):
         self.slug=generate_slug(self.title)
