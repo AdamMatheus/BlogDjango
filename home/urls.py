@@ -1,5 +1,5 @@
-
-from django.urls import path
+from froala_editor import views
+from django.urls import path,include
 from .views import *
 
 
@@ -17,6 +17,7 @@ urlpatterns = [
     path('verify/<token>/', verify , name ='verify'),
     path('' , post_view, name='post-list'),
     path('like/' , like_post, name='like-post'),
-    path('blog/<int:pk>/comment/', AddCommentView.as_view(),name='add_comment' )
+    path('blog/<int:pk>/comment/', AddCommentView.as_view(),name='add_comment' ),
+    path('froala_editor/',include('froala_editor.urls')),
 ]
 
